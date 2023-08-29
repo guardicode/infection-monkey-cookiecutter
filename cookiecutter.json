@@ -1,0 +1,52 @@
+{
+    "project_name": "infection-monkey-template",
+
+    "full_name": "Your Name",
+    "email": "you@gmail.com",
+    "github_repo": "infection-monkey-template",
+
+    "platform": [
+        "github",
+        "gitlab"
+    ],
+    
+    "org": "guardicode",
+    "github_url": "guardicode",
+    "url": "https://{{ cookiecutter.platform }}.com/{{ cookiecutter.org }}/{{ cookiecutter.project_name }}",
+
+    "__year": "{% now 'utc', '%Y' %}",
+    "license": ["MIT","Apache","GPLv3"],
+    
+    "default_branch": "main",
+    "project_short_description": "Sample cookiecutter template for infection monkey.",
+    "python_major_version": 3,
+    "python_minor_version": 11,
+
+    "hook_isort": ["y", "n"],
+    "hook_black": ["y", "n"],
+    "hook_vulture": ["y", "n"],
+
+    "codecov": ["y","n"],
+
+    "__prompts__": {
+        "license": {
+            "__prompt__": "Choose a license",
+            "GPLv3": "GPLv3 (recommended for infection monkey projects)"
+        },
+        "hook_vulture": {
+            "__prompt__": "Add vulture to .pre-commit-config",
+            "y": "yes",
+            "n": "no"
+        },
+        "hook_black": {
+            "__prompt__": "Add black to .pre-commit-config",
+            "y": "yes",
+            "n": "no"
+        },
+        "hook_isort": {
+            "__prompt__": "Add isort to .pre-commit-config",
+            "y": "yes",
+            "n": "no"
+        }
+    }
+}
