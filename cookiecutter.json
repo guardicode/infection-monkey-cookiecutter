@@ -25,8 +25,11 @@
     "hook_isort": ["y", "n"],
     "hook_black": ["y", "n"],
     "hook_vulture": ["y", "n"],
+    "hook_flake8": ["y", "n"],
 
     "codecov": ["y","n"],
+    
+    "exclude_these_file_in_flake8": "monkey/monkey_island/cc/ui,vulture_allowlist.py",
 
     "__prompts__": {
         "license": {
@@ -45,6 +48,11 @@
         },
         "hook_isort": {
             "__prompt__": "Add isort to .pre-commit-config",
+            "y": "yes",
+            "n": "no"
+        },
+        "hook_flake8": {
+            "__prompt__": "Add flake8 to .pre-commit-config",
             "y": "yes",
             "n": "no"
         }
