@@ -26,6 +26,9 @@
     "hook_black": ["y", "n"],
     "hook_vulture": ["y", "n"],
     "hook_flake8": ["y", "n"],
+    "hook_eslint": ["y","n"],
+    "hook_mypy": ["y","n"],
+    "hook_shellcheck": ["y","n"],
 
     "codecov": ["y","n"],
     
@@ -36,8 +39,8 @@
             "__prompt__": "Choose a license",
             "GPLv3": "GPLv3 (recommended for infection monkey projects)"
         },
-        "hook_vulture": {
-            "__prompt__": "Add vulture to .pre-commit-config",
+        "hook_isort": {
+            "__prompt__": "Add isort to .pre-commit-config",
             "y": "yes",
             "n": "no"
         },
@@ -46,13 +49,28 @@
             "y": "yes",
             "n": "no"
         },
-        "hook_isort": {
-            "__prompt__": "Add isort to .pre-commit-config",
+        "hook_vulture": {
+            "__prompt__": "Add vulture to .pre-commit-config",
             "y": "yes",
             "n": "no"
         },
         "hook_flake8": {
             "__prompt__": "Add flake8 to .pre-commit-config",
+            "y": "yes",
+            "n": "no"
+        },
+        "hook_eslint":{
+            "__prompt__": "Add eslint to .pre-commit-config",
+            "y": "yes",
+            "n": "no"
+        },
+        "hook_mypy": {
+            "__prompt__": "Add mypy to .pre-commit-config",
+            "y": "yes",
+            "n": "no"
+        },
+        "hook_shellcheck":{
+            "__prompt__": "Add shellcheck to .pre-commit-config",
             "y": "yes",
             "n": "no"
         }
