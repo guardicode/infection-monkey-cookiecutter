@@ -26,7 +26,6 @@
     "hook_black": ["y", "n"],
     "hook_vulture": ["y", "n"],
     "hook_flake8": ["y", "n"],
-    "hook_eslint": ["y","n"],
     "hook_mypy": ["y","n"],
     "hook_shellcheck": ["y","n"],
 
@@ -56,11 +55,6 @@
         },
         "hook_flake8": {
             "__prompt__": "Add flake8 to .pre-commit-config",
-            "y": "yes",
-            "n": "no"
-        },
-        "hook_eslint":{
-            "__prompt__": "Add eslint to .pre-commit-config",
             "y": "yes",
             "n": "no"
         },

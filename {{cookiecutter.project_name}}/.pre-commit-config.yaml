@@ -36,13 +36,6 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: trailing-whitespace
-{%- if cookiecutter.hook_eslint == "y" %}
-  - repo: https://github.com/eslint/eslint
-    rev: v8.35.0
-    hooks:
-      - id: eslint
-        args: ["monkey/monkey_island/cc/ui/src/", "--fix", "--max-warnings=0"]
-{%- endif %} 
 {%- if cookiecutter.hook_mypy == "y" %}
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.0.1
