@@ -1,0 +1,72 @@
+default_stages: [commit]
+repos:
+{%- if cookiecutter.hook_isort == "y" %}
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: isort (python)
+      - id: isort
+        name: isort (cython)
+        types: [cython]
+      - id: isort
+        name: isort (pyi)
+        types: [pyi]
+{%- endif %}
+{%- if cookiecutter.hook_black == "y" %}
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black
+{%- endif %}
+{%- if cookiecutter.hook_flake8 == "y" %}
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        additional_dependencies: [dlint]
+{%- endif %}
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+{%- if cookiecutter.hook_mypy == "y" %}
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.0.1
+    hooks:
+      - id: mypy
+        additional_dependencies: []
+        exclude: "vulture_allowlist.py"
+        args: [--ignore-missing-imports, --check-untyped-defs] 
+{%- endif %}  
+{%- if cookiecutter.hook_shellcheck == "y" %}  
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.9.0
+    hooks:
+    -   id: shellcheck
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: 
+        language: system
+        files: 
+        exclude: 
+        stages: [push]
+{%- endif %} 
+{%- if cookiecutter.hook_vulture == "y" %}
+  - repo: https://github.com/jendrikseipp/vulture
+    rev: v2.7
+    hooks:
+      - id: vulture
+{%- endif %}
+  - repo: https://github.com/mssalvatore/merge-issue-number-hook
+    rev: v1.0.0
+    hooks:
+      - id: merge-issue-number
