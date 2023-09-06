@@ -32,7 +32,7 @@
 
     "codecov": ["y","n"],
     
-    "exclude_these_file_in_flake8": "monkey/monkey_island/cc/ui,vulture_allowlist.py",
+    "exclude_these_file_in_flake8": "vulture_allowlist.py",
 
     "__prompts__": {
         "license": {
