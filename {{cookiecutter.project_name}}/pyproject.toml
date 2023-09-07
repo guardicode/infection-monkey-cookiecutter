@@ -1,0 +1,4 @@
+{%- if cookiecutter.hook_black == "y" %}
+[tool.black]
+line-length = 100
+{% endif %}
