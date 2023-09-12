@@ -31,3 +31,47 @@ norecursedirs = "node_modules dist"
 [tool.vulture]
 paths = ["{{ cookiecutter.project_name }}"]
 {% endif %}
+
+{%- if cookiecutter.hook_poetry == "y" %}
+[tool.poetry]
+name = "{{ cookiecutter.project_name }}"
+version = "v1.2.0"
+description = "{{ cookiecutter.project_short_description }}"
+authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
+license = "{{ cookiecutter.license }}"
+classifiers=[
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities",
+{%- if cookiecutter.license == "GPLv3" %}
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+{%- elif cookiecutter.license == "Apache" %}
+    "License :: OSI Approved :: Apache Software License",
+{%- elif cookiecutter.license == "MIT" %}
+    "License :: OSI Approved :: MIT License",
+{%- endif %}
+]
+repository = "{{ cookiecutter.url }}"
+readme = "README.md"
+include = ["CHANGELOG.md"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.0"
+pytest-cov = "^3.0.0"
+black = "^22.1.0"
+pynvim = "^0.4.3"
+isort = "^5.10.1"
+mypy = "^0.940"
+pudb = "^2022.1.2"
+{% endif %}
+
+{%- if cookiecutter.hook_poetry == "y" %}
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+{%- endif %}

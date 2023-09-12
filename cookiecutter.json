@@ -34,6 +34,7 @@
     "exclude_these_file_in_flake8": "vulture_allowlist.py",
 
     "hook_pytest": ["y","n"],
+    "hook_poetry": ["y","n"],
     
 
     "__prompts__": {
@@ -73,6 +74,11 @@
         },
         "hook_pytest":{
             "__prompt__": "Add pytest to pyproject.toml",
+            "y": "yes",
+            "n": "no"
+        },
+        "hook_poetry": {
+            "__prompt__": "Add poetry to pyproject.toml",
             "y": "yes",
             "n": "no"
         }
