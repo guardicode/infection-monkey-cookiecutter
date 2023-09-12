@@ -38,7 +38,7 @@ repos:
       - id: trailing-whitespace
 {%- if cookiecutter.hook_mypy == "y" %}
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.0.1
+    rev: v{{ cookiecutter.mypy_version }}
     hooks:
       - id: mypy
         additional_dependencies: []
