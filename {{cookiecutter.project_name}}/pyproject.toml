@@ -26,3 +26,8 @@ log_cli_date_format = "{{ cookiecutter.__date }}"
 addopts = "-v --capture=sys tests"
 norecursedirs = "node_modules dist"
 {% endif %}
+
+{%- if cookiecutter.hook_vulture == "y" %}
+[tool.vulture]
+paths = ["{{ cookiecutter.project_name }}"]
+{% endif %}
