@@ -36,6 +36,7 @@
     "hook_pytest": ["y","n"],
     "hook_poetry": ["y","n"],
     
+    "isort_version": "5.12.0",
 
     "__prompts__": {
         "license": {

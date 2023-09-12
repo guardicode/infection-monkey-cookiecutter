@@ -65,7 +65,7 @@ pytest = "^7.1.0"
 pytest-cov = "^3.0.0"
 black = "^22.1.0"
 pynvim = "^0.4.3"
-isort = "^5.10.1"
+isort = "{{ cookiecutter.isort_version }}"
 mypy = "^0.940"
 pudb = "^2022.1.2"
 {% endif %}
