@@ -61,13 +61,13 @@ include = ["CHANGELOG.md"]
 python = "^3.7"
 
 [tool.poetry.dev-dependencies]
-pytest = "^7.1.0"
-pytest-cov = "^3.0.0"
 black = "{{ cookiecutter.black_version }}"
-pynvim = "^0.4.3"
 isort = "{{ cookiecutter.isort_version }}"
 mypy = "{{ cookiecutter.mypy_version }}"
 pudb = "^2022.1.2"
+pynvim = "^0.4.3"
+pytest = "^7.1.0"
+pytest-cov = "^3.0.0"
 vulture = "{{ cookiecutter.vulture_version }}"
 
 [build-system]
