@@ -69,9 +69,7 @@ isort = "{{ cookiecutter.isort_version }}"
 mypy = "{{ cookiecutter.mypy_version }}"
 pudb = "^2022.1.2"
 vulture = "{{ cookiecutter.vulture_version }}"
-{% endif %}
 
-{%- if cookiecutter.hook_poetry == "y" %}
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
