@@ -68,6 +68,7 @@ pynvim = "^0.4.3"
 isort = "{{ cookiecutter.isort_version }}"
 mypy = "^0.940"
 pudb = "^2022.1.2"
+vulture = "{{ cookiecutter.vulture_version }}"
 {% endif %}
 
 {%- if cookiecutter.hook_poetry == "y" %}

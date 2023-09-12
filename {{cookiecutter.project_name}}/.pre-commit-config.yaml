@@ -53,7 +53,7 @@ repos:
 {%- endif %} 
 {%- if cookiecutter.hook_vulture == "y" %}
   - repo: https://github.com/jendrikseipp/vulture
-    rev: v2.7
+    rev: v{{ cookiecutter.vulture_version }}
     hooks:
       - id: vulture
 {%- endif %}
