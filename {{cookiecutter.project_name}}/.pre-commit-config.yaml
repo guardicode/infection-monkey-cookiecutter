@@ -15,7 +15,7 @@ repos:
 {%- endif %}
 {%- if cookiecutter.hook_black == "y" %}
   - repo: https://github.com/psf/black
-    rev: 23.1.0
+    rev: {{ cookiecutter.black_version }}
     hooks:
       - id: black
 {%- endif %}
