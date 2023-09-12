@@ -50,15 +50,6 @@ repos:
     rev: v0.9.0
     hooks:
     -   id: shellcheck
-  - repo: local
-    hooks:
-      - id: pytest
-        name: pytest
-        entry: 
-        language: system
-        files: 
-        exclude: 
-        stages: [push]
 {%- endif %} 
 {%- if cookiecutter.hook_vulture == "y" %}
   - repo: https://github.com/jendrikseipp/vulture
