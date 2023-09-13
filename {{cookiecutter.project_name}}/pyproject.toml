@@ -21,7 +21,7 @@ log_cli_date_format = "%H:%M:%S"
 addopts = "-v --capture=sys tests"
 
 [tool.vulture]
-paths = ["{{ cookiecutter.project_name }}"]
+paths = ["{{ cookiecutter.__project_slug }}"]
 
 [tool.poetry]
 name = "{{ cookiecutter.project_name }}"
