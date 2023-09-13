@@ -19,7 +19,6 @@
     "__date": "{% now 'utc', '%H:%M:%S' %}",
     "license": ["MIT","Apache","GPLv3"],
     
-    "default_branch": "main",
     "project_short_description": "Sample cookiecutter template for infection monkey.",
     "python_major_version": 3,
     "python_minor_version": 11,
