@@ -1,18 +1,5 @@
 default_stages: [commit]
 repos:
-{%- if cookiecutter.hook_isort == "y" %}
-  - repo: https://github.com/pycqa/isort
-    rev: {{ cookiecutter.isort_version }}
-    hooks:
-      - id: isort
-        name: isort (python)
-      - id: isort
-        name: isort (cython)
-        types: [cython]
-      - id: isort
-        name: isort (pyi)
-        types: [pyi]
-{%- endif %}
 {%- if cookiecutter.hook_black == "y" %}
   - repo: https://github.com/psf/black
     rev: {{ cookiecutter.black_version }}
@@ -26,6 +13,32 @@ repos:
       - id: flake8
         additional_dependencies: [dlint]
 {%- endif %}
+{%- if cookiecutter.hook_isort == "y" %}
+  - repo: https://github.com/pycqa/isort
+    rev: {{ cookiecutter.isort_version }}
+    hooks:
+      - id: isort
+        name: isort (python)
+      - id: isort
+        name: isort (cython)
+        types: [cython]
+      - id: isort
+        name: isort (pyi)
+        types: [pyi]
+{%- endif %}
+  - repo: https://github.com/mssalvatore/merge-issue-number-hook
+    rev: v1.0.0
+    hooks:
+      - id: merge-issue-number
+{%- if cookiecutter.hook_mypy == "y" %}
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v{{ cookiecutter.mypy_version }}
+    hooks:
+      - id: mypy
+        additional_dependencies: []
+        exclude: "vulture_allowlist.py"
+        args: [--ignore-missing-imports, --check-untyped-defs] 
+{%- endif %}  
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
@@ -36,15 +49,6 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: trailing-whitespace
-{%- if cookiecutter.hook_mypy == "y" %}
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v{{ cookiecutter.mypy_version }}
-    hooks:
-      - id: mypy
-        additional_dependencies: []
-        exclude: "vulture_allowlist.py"
-        args: [--ignore-missing-imports, --check-untyped-defs] 
-{%- endif %}  
 {%- if cookiecutter.hook_shellcheck == "y" %}  
   - repo: https://github.com/koalaman/shellcheck-precommit
     rev: v0.9.0
@@ -57,7 +61,3 @@ repos:
     hooks:
       - id: vulture
 {%- endif %}
-  - repo: https://github.com/mssalvatore/merge-issue-number-hook
-    rev: v1.0.0
-    hooks:
-      - id: merge-issue-number
