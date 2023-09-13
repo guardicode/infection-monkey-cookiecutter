@@ -40,11 +40,6 @@ description = "{{ cookiecutter.project_short_description }}"
 authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
 license = "{{ cookiecutter.license }}"
 classifiers=[
-    "Development Status :: 5 - Production/Stable",
-    "Intended Audience :: Developers",
-    "Operating System :: OS Independent",
-    "Topic :: Software Development :: Libraries",
-    "Topic :: Utilities",
 {%- if cookiecutter.license == "GPLv3" %}
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
 {%- elif cookiecutter.license == "Apache" %}
