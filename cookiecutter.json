@@ -36,11 +36,11 @@
     "hook_pytest": ["y","n"],
     "hook_poetry": ["y","n"],
     
-    "black_version": "23.1.0",
-    "flake8_version": "6.0.0",
-    "isort_version": "5.12.0",
-    "mypy_version": "1.0.1",
-    "vulture_version": "2.7",
+    "_black_version": "23.1.0",
+    "_flake8_version": "6.0.0",
+    "_isort_version": "5.12.0",
+    "_mypy_version": "1.0.1",
+    "_vulture_version": "2.7",
 
     "__prompts__": {
         "license": {

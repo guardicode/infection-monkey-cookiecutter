@@ -2,20 +2,20 @@ default_stages: [commit]
 repos:
 {%- if cookiecutter.hook_black == "y" %}
   - repo: https://github.com/psf/black
-    rev: {{ cookiecutter.black_version }}
+    rev: {{ cookiecutter._black_version }}
     hooks:
       - id: black
 {%- endif %}
 {%- if cookiecutter.hook_flake8 == "y" %}
   - repo: https://github.com/PyCQA/flake8
-    rev: {{ cookiecutter.flake8_version }}
+    rev: {{ cookiecutter._flake8_version }}
     hooks:
       - id: flake8
         additional_dependencies: [dlint]
 {%- endif %}
 {%- if cookiecutter.hook_isort == "y" %}
   - repo: https://github.com/pycqa/isort
-    rev: {{ cookiecutter.isort_version }}
+    rev: {{ cookiecutter._isort_version }}
     hooks:
       - id: isort
         name: isort (python)
@@ -32,7 +32,7 @@ repos:
       - id: merge-issue-number
 {%- if cookiecutter.hook_mypy == "y" %}
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v{{ cookiecutter.mypy_version }}
+    rev: v{{ cookiecutter._mypy_version }}
     hooks:
       - id: mypy
         additional_dependencies: []
@@ -57,7 +57,7 @@ repos:
 {%- endif %} 
 {%- if cookiecutter.hook_vulture == "y" %}
   - repo: https://github.com/jendrikseipp/vulture
-    rev: v{{ cookiecutter.vulture_version }}
+    rev: v{{ cookiecutter._vulture_version }}
     hooks:
       - id: vulture
 {%- endif %}
