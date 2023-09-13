@@ -62,6 +62,7 @@ python = "^3.7"
 
 [tool.poetry.dev-dependencies]
 black = "{{ cookiecutter.black_version }}"
+flake8 = "{{ cookiecutter.flake8_version }}"
 isort = "{{ cookiecutter.isort_version }}"
 mypy = "{{ cookiecutter.mypy_version }}"
 pudb = "^2022.1.2"

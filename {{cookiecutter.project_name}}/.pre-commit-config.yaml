@@ -21,7 +21,7 @@ repos:
 {%- endif %}
 {%- if cookiecutter.hook_flake8 == "y" %}
   - repo: https://github.com/PyCQA/flake8
-    rev: 6.0.0
+    rev: {{ cookiecutter.flake8_version }}
     hooks:
       - id: flake8
         additional_dependencies: [dlint]
