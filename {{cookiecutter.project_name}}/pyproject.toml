@@ -35,7 +35,7 @@ paths = ["{{ cookiecutter.project_name }}"]
 {%- if cookiecutter.hook_poetry == "y" %}
 [tool.poetry]
 name = "{{ cookiecutter.project_name }}"
-version = "v1.2.0"
+version = "v0.0.1"
 description = "{{ cookiecutter.project_short_description }}"
 authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
 license = "{{ cookiecutter.license }}"
