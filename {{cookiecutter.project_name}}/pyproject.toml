@@ -19,7 +19,6 @@ log_cli_level = "DEBUG"
 log_cli_format = "%(asctime)s [%(levelname)s] %(module)s.%(funcName)s.%(lineno)d: %(message)s"
 log_cli_date_format = "%H:%M:%S"
 addopts = "-v --capture=sys tests"
-norecursedirs = "node_modules dist"
 
 [tool.vulture]
 paths = ["{{ cookiecutter.project_name }}"]
