@@ -1,19 +1,14 @@
 default_stages: [commit]
 repos:
-{%- if cookiecutter.hook_black == "y" %}
   - repo: https://github.com/psf/black
     rev: {{ cookiecutter._black_version }}
     hooks:
       - id: black
-{%- endif %}
-{%- if cookiecutter.hook_flake8 == "y" %}
   - repo: https://github.com/PyCQA/flake8
     rev: {{ cookiecutter._flake8_version }}
     hooks:
       - id: flake8
         additional_dependencies: [dlint]
-{%- endif %}
-{%- if cookiecutter.hook_isort == "y" %}
   - repo: https://github.com/pycqa/isort
     rev: {{ cookiecutter._isort_version }}
     hooks:
@@ -25,12 +20,10 @@ repos:
       - id: isort
         name: isort (pyi)
         types: [pyi]
-{%- endif %}
   - repo: https://github.com/mssalvatore/merge-issue-number-hook
     rev: v1.0.0
     hooks:
       - id: merge-issue-number
-{%- if cookiecutter.hook_mypy == "y" %}
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v{{ cookiecutter._mypy_version }}
     hooks:
@@ -38,7 +31,6 @@ repos:
         additional_dependencies: []
         exclude: "vulture_allowlist.py"
         args: [--ignore-missing-imports, --check-untyped-defs] 
-{%- endif %}  
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
@@ -55,9 +47,7 @@ repos:
     hooks:
     -   id: shellcheck
 {%- endif %} 
-{%- if cookiecutter.hook_vulture == "y" %}
   - repo: https://github.com/jendrikseipp/vulture
     rev: v{{ cookiecutter._vulture_version }}
     hooks:
       - id: vulture
-{%- endif %}
