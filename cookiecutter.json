@@ -16,7 +16,6 @@
     "url": "https://{{ cookiecutter.platform }}.com/{{ cookiecutter.org }}/{{ cookiecutter.project_name }}",
 
     "__year": "{% now 'utc', '%Y' %}",
-    "__date": "{% now 'utc', '%H:%M:%S' %}",
     "license": ["MIT","Apache","GPLv3"],
     
     "project_short_description": "Sample cookiecutter template for infection monkey.",
