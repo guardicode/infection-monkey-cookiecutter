@@ -47,13 +47,14 @@ classifiers=[
 {%- elif cookiecutter.license == "MIT" %}
     "License :: OSI Approved :: MIT License",
 {%- endif %}
+    "Programming Language :: Python :: {{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
 ]
 repository = "{{ cookiecutter.url }}"
 readme = "README.md"
 include = ["CHANGELOG.md"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
 
 [tool.poetry.dev-dependencies]
 black = "{{ cookiecutter._black_version }}"
