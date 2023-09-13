@@ -2,7 +2,7 @@ default_stages: [commit]
 repos:
 {%- if cookiecutter.hook_isort == "y" %}
   - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+    rev: {{ cookiecutter.isort_version }}
     hooks:
       - id: isort
         name: isort (python)
@@ -15,7 +15,7 @@ repos:
 {%- endif %}
 {%- if cookiecutter.hook_black == "y" %}
   - repo: https://github.com/psf/black
-    rev: 23.1.0
+    rev: {{ cookiecutter.black_version }}
     hooks:
       - id: black
 {%- endif %}
@@ -38,7 +38,7 @@ repos:
       - id: trailing-whitespace
 {%- if cookiecutter.hook_mypy == "y" %}
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.0.1
+    rev: v{{ cookiecutter.mypy_version }}
     hooks:
       - id: mypy
         additional_dependencies: []
@@ -53,7 +53,7 @@ repos:
 {%- endif %} 
 {%- if cookiecutter.hook_vulture == "y" %}
   - repo: https://github.com/jendrikseipp/vulture
-    rev: v2.7
+    rev: v{{ cookiecutter.vulture_version }}
     hooks:
       - id: vulture
 {%- endif %}

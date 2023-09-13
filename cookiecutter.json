@@ -1,5 +1,6 @@
 {
     "project_name": "infection-monkey-template",
+    "__project_slug": "{{ cookiecutter.project_name | lower | replace('-', '_') | replace('.', '_') }}",
 
     "full_name": "Your Name",
     "email": "you@gmail.com",
@@ -15,6 +16,7 @@
     "url": "https://{{ cookiecutter.platform }}.com/{{ cookiecutter.org }}/{{ cookiecutter.project_name }}",
 
     "__year": "{% now 'utc', '%Y' %}",
+    "__date": "{% now 'utc', '%H:%M:%S' %}",
     "license": ["MIT","Apache","GPLv3"],
     
     "default_branch": "main",
@@ -32,6 +34,14 @@
     "codecov": ["y","n"],
     
     "exclude_these_file_in_flake8": "vulture_allowlist.py",
+
+    "hook_pytest": ["y","n"],
+    "hook_poetry": ["y","n"],
+    
+    "isort_version": "5.12.0",
+    "vulture_version": "2.7",
+    "mypy_version": "1.0.1",
+    "black_version": "23.1.0",
 
     "__prompts__": {
         "license": {
@@ -65,6 +75,16 @@
         },
         "hook_shellcheck":{
             "__prompt__": "Add shellcheck to .pre-commit-config",
+            "y": "yes",
+            "n": "no"
+        },
+        "hook_pytest":{
+            "__prompt__": "Add pytest to pyproject.toml",
+            "y": "yes",
+            "n": "no"
+        },
+        "hook_poetry": {
+            "__prompt__": "Add poetry to pyproject.toml",
             "y": "yes",
             "n": "no"
         }

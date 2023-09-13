@@ -1,0 +1,76 @@
+{%- if cookiecutter.hook_black == "y" %}
+[tool.black]
+line-length = 100
+{% endif %}
+
+{%- if cookiecutter.hook_isort == "y" %}
+[tool.isort]
+known_first_party = "{{ cookiecutter.project_name }}"
+line_length = 100
+### for compatibility with black
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+skip_glob="**/__init__.py"
+{% endif %}
+
+{%- if cookiecutter.hook_pytest == "y" %}
+[tool.pytest.ini_options]
+minversion = "6.0"
+log_cli = 1
+log_cli_level = "DEBUG"
+log_cli_format = "%(asctime)s [%(levelname)s] %(module)s.%(funcName)s.%(lineno)d: %(message)s"
+log_cli_date_format = "{{ cookiecutter.__date }}"
+addopts = "-v --capture=sys tests"
+norecursedirs = "node_modules dist"
+{% endif %}
+
+{%- if cookiecutter.hook_vulture == "y" %}
+[tool.vulture]
+paths = ["{{ cookiecutter.project_name }}"]
+{% endif %}
+
+{%- if cookiecutter.hook_poetry == "y" %}
+[tool.poetry]
+name = "{{ cookiecutter.project_name }}"
+version = "v1.2.0"
+description = "{{ cookiecutter.project_short_description }}"
+authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
+license = "{{ cookiecutter.license }}"
+classifiers=[
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities",
+{%- if cookiecutter.license == "GPLv3" %}
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+{%- elif cookiecutter.license == "Apache" %}
+    "License :: OSI Approved :: Apache Software License",
+{%- elif cookiecutter.license == "MIT" %}
+    "License :: OSI Approved :: MIT License",
+{%- endif %}
+]
+repository = "{{ cookiecutter.url }}"
+readme = "README.md"
+include = ["CHANGELOG.md"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+black = "{{ cookiecutter.black_version }}"
+isort = "{{ cookiecutter.isort_version }}"
+mypy = "{{ cookiecutter.mypy_version }}"
+pudb = "^2022.1.2"
+pynvim = "^0.4.3"
+pytest = "^7.1.0"
+pytest-cov = "^3.0.0"
+vulture = "{{ cookiecutter.vulture_version }}"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+{%- endif %}
