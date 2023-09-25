@@ -1,4 +1,7 @@
 default_stages: [commit]
+default_language_version:
+  python: python{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}
+
 repos:
   - repo: https://github.com/psf/black
     rev: {{ cookiecutter._black_version }}
