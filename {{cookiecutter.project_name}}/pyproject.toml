@@ -21,7 +21,7 @@ log_cli_date_format = "%H:%M:%S"
 addopts = "-v --capture=sys tests"
 
 [tool.vulture]
-exclude=["tests/", "venv/"]
+exclude=["tests/", "venv/", ".venv/"]
 paths = ["."]
 
 [tool.poetry]
