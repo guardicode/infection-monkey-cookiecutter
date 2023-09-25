@@ -33,7 +33,7 @@ repos:
       - id: mypy
         additional_dependencies: []
         exclude: "vulture_allowlist.py"
-        args: [--ignore-missing-imports, --check-untyped-defs] 
+        args: [--ignore-missing-imports, --check-untyped-defs]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
@@ -44,12 +44,12 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: trailing-whitespace
-{%- if cookiecutter.hook_shellcheck == "y" %}  
+{%- if cookiecutter.hook_shellcheck == "y" %}
   - repo: https://github.com/koalaman/shellcheck-precommit
     rev: v0.9.0
     hooks:
     -   id: shellcheck
-{%- endif %} 
+{%- endif %}
   - repo: https://github.com/jendrikseipp/vulture
     rev: v{{ cookiecutter._vulture_version }}
     hooks:
