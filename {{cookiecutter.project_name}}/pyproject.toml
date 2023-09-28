@@ -1,3 +1,9 @@
+[project]
+name = "{{ cookiecutter.project_name }}"
+license = "{{ cookiecutter.license }}"
+requires-python = "^{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
+
+
 [tool.black]
 line-length = 100
 
