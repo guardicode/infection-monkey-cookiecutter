@@ -48,7 +48,7 @@ classifiers=[
 ]
 repository = "{{ cookiecutter.url }}"
 readme = "README.md"
-include = ["CHANGELOG.md"]
+include = ["CHANGELOG.md", "README.md"]
 
 [tool.poetry.dependencies]
 python = "^{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
