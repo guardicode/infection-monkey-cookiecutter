@@ -7,6 +7,9 @@ requires-python = "^{{ cookiecutter.python_major_version }}.{{ cookiecutter.pyth
 [tool.black]
 line-length = 100
 
+[tool.cruft]
+skip = ["{{ cookiecutter.project_name }}/__init__.py", "README.md", "CHANGELOG.md"]
+
 [tool.isort]
 known_first_party = "{{ cookiecutter.project_name }}"
 line_length = 100
