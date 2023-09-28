@@ -17,6 +17,7 @@
 
     "__year": "{% now 'utc', '%Y' %}",
     "license": ["GPLv3", "MIT","Apache"],
+    "versioning_scheme": ["semver", "PEP440"],
     
     "project_short_description": "Sample cookiecutter template for infection monkey.",
     "python_major_version": 3,
@@ -39,6 +40,9 @@
         "license": {
             "__prompt__": "Choose a license",
             "GPLv3": "GPLv3 (recommended for infection monkey projects)"
+        },
+        "versioning_scheme": {
+            "__prompt__": "Choose a versioning_scheme"
         },
         "hook_shellcheck":{
             "__prompt__": "Add shellcheck to .pre-commit-config",
