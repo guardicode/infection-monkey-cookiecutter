@@ -26,6 +26,9 @@ force_grid_wrap = 0
 use_parentheses = true
 ensure_newline_before_comments = true
 
+[tool.mypy]
+check_untyped_defs = true
+
 [tool.pytest.ini_options]
 minversion = "6.0"
 log_cli = 1
