@@ -43,7 +43,7 @@ paths = ["{{ cookiecutter.__project_slug }}", "vulture_allowlist.py"]
 
 [tool.poetry]
 name = "{{ cookiecutter.project_name }}"
-version = "v0.0.1"
+version = "v0.1.0"
 description = "{{ cookiecutter.project_short_description }}"
 authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
 license = "{{ cookiecutter.license }}"
