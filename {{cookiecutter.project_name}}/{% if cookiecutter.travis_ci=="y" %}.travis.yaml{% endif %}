@@ -1,0 +1,52 @@
+group: travis_latest
+
+branches:
+  only:
+    - dev
+    - main
+    - fix-travis
+
+jobs:
+  include:
+    - name: "{{ cookiecutter.project_name }}"
+      language: python
+      python:
+        - 3.11
+      os: linux
+      dist: focal
+      env:
+        - PIP_CACHE_DIR=$HOME/.cache/pip PIPENV_CACHE_DIR=$HOME/.cache/pipenv
+
+      cache:
+        - pip: true
+        - directories:
+           - $PIP_CACHE_DIR
+           - $PIPENV_CACHE_DIR
+
+      install:
+        # Python
+        - pip install pip --upgrade
+        - pip install pre-commit poetry
+        - poetry install
+
+      script:
+        # Run linters
+        - pre-commit run --all-files
+
+        ## run unit tests and generate coverage data
+        - poetry run pytest --cov=.
+
+      after_success:
+        # Upload code coverage results to codecov.io, see https://github.com/codecov/codecov-bash for more information
+        - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  slack:  # Notify to slack
+      rooms:
+      - infectionmonkey:REDACTED#ci  # room: #ci
+      on_success: change
+      on_failure: always
+  email:
+      on_success: change
+      on_failure: always
+
