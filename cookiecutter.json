@@ -46,9 +46,7 @@
             "__prompt__": "Choose a versioning_scheme"
         },
         "hook_shellcheck":{
-            "__prompt__": "Add shellcheck to .pre-commit-config",
-            "y": "yes",
-            "n": "no"
+            "__prompt__": "Add shellcheck to .pre-commit-config"
         }
     }
 }
