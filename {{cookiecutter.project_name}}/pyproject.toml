@@ -46,7 +46,9 @@ name = "{{ cookiecutter.project_name }}"
 version = "v0.1.0"
 description = "{{ cookiecutter.project_short_description }}"
 authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
+{%- if cookiecutter.license is not none %}
 license = "{{ cookiecutter.license }}"
+{%- endif %}
 classifiers=[
 {%- if cookiecutter.license == "GPLv3" %}
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
