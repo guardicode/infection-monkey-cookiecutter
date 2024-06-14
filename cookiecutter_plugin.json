@@ -1,5 +1,6 @@
 {
     "plugin_name": "Name of the plugin",
+    "__plugin_name": "{{ cookiecutter.plugin_name | lower | replace(' ', '') | replace('-', '') | replace('_', '') }}",
     "plugin_type": ["Exploiter", "Credentials_Collector", "Payload"],
     "plugin_options": ["y", "n"],
     "__prompt__": {
