@@ -1,5 +1,6 @@
 {
-    "plugin_type": ["exploiter", "credentials_collector", "payload"],
+    "plugin_name": "Name of the plugin",
+    "plugin_type": ["Exploiter", "Credentials_Collector", "Payload"],
     "plugin_options": ["y", "n"],
     "__prompt__": {
         "plugin_type": "Select the type of plugin",
