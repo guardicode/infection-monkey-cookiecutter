@@ -1,4 +1,5 @@
 {
+    "__project_type": "generic",
     "project_name": "infection-monkey-template",
     "__project_slug": "{{ cookiecutter.project_name | lower | replace('-', '_') | replace('.', '_') }}",
 
