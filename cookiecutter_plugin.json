@@ -5,6 +5,6 @@
     "plugin_options": ["y", "n"],
     "__prompt__": {
         "plugin_type": "Select the type of plugin",
-        "plugin_options": "Do you want to add options to the plugin?"
+        "plugin_options": "Will your plugin require configuration in order to run?"
     }
 }
