@@ -7,7 +7,7 @@ supported_operating_systems:
 target_operating_systems:
   - # List of target operating systems (linux/windows)
 title: # Choose a title for your plugin
-version: 0.0.0
+version: 0.1.0
 description: # Add short description on what your plugin does
 safe: # Is your plugin production safe? (true/false)
 remediation_suggestion: >-
