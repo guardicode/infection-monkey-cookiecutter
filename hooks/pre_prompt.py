@@ -33,7 +33,10 @@ def extend_default_cookiecutter(
     """
     project_type = prompt_for_generic_or_plugin()
 
-    if project_type == "2":
+    if project_type == "1":
+        cookiecutter_json["__project_type"] = "generic"
+        return cookiecutter_json
+    elif project_type == "2":
         cookiecutter_json["__project_type"] = "agent_plugin"
         cookiecutter_plugin_config_path = Path("cookiecutter_plugin.json")
         if cookiecutter_plugin_config_path.exists():
