@@ -42,6 +42,8 @@ def extend_default_cookiecutter(
         if cookiecutter_plugin_config_path.exists():
             plugin_config = json.loads(cookiecutter_plugin_config_path.read_text())
 
+            # We change the order of the prompts to ask for the plugin configuration first
+            # after we choose the project type
             return {**plugin_config, **cookiecutter_json}
 
 
