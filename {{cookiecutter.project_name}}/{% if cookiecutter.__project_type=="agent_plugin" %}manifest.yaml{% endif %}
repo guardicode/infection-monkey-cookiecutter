@@ -1,0 +1,15 @@
+# For more check our plugin documentation:
+# <link to our manifest documentation>
+name: {{ cookiecutter.plugin_name }}
+plugin_type: {{ cookiecutter.plugin_type }}
+supported_operating_systems:
+  - # List of supported operating systems (linux/windows)
+target_operating_systems:
+  - # List of target operating systems (linux/windows)
+title: # Choose a title for your plugin
+version: 0.1.0
+description: # Add short description on what your plugin does
+safe: # Is your plugin production safe? (true/false)
+remediation_suggestion: >-
+    # A multiline, optional remediation suggestion about your plugin
+link_to_documentation: # An optional link to plugin documentation

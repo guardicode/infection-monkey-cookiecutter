@@ -28,7 +28,6 @@
     "hook_shellcheck": ["y","n"],
 
     "codecov": ["y","n"],
-    "travis_ci": ["y","n"],
     
     "exclude_these_file_in_flake8": "vulture_allowlist.py",
 
