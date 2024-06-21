@@ -31,13 +31,16 @@ def extend_default_cookiecutter(
     :param cookiecutter_json: The default cookiecutter.json
     :return: The extended cookiecutter.json with plugin configuration
     """
-    project_type = prompt_for_generic_or_plugin()
+    context = """{{ cookiecutter | jsonify }}"""
+    if "__project_type" in context:
+        project_type = context["__project_type"]
+    else:
+        project_type = prompt_for_generic_or_plugin()
 
-    if project_type == "1":
-        cookiecutter_json["__project_type"] = "generic"
+    cookiecutter_json["__project_type"] = project_type
+    if project_type == "generic":
         return cookiecutter_json
-    elif project_type == "2":
-        cookiecutter_json["__project_type"] = "agent_plugin"
+    elif project_type == "agent_plugin":
         cookiecutter_plugin_config_path = Path("cookiecutter_plugin.json")
         if cookiecutter_plugin_config_path.exists():
             plugin_config = json.loads(cookiecutter_plugin_config_path.read_text())
@@ -61,7 +64,15 @@ def prompt_for_generic_or_plugin() -> str:
         choices=["1", "2"],
         default="1",
     )
-    return choice
+    return parse_choice(choice)
+
+
+def parse_choice(choice: str) -> str:
+    if choice == "1":
+        return "generic"
+    elif choice == "2":
+        return "agent_plugin"
+    return "unknown"
 
 
 if __name__ == "__main__":
