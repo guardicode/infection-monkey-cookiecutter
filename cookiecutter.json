@@ -5,21 +5,19 @@
 
     "full_name": "Your Name",
     "email": "you@gmail.com",
-    "github_repo": "infection-monkey-template",
 
     "platform": [
         "github",
         "gitlab"
     ],
-    
+
     "org": "guardicode",
-    "github_url": "guardicode",
     "url": "https://{{ cookiecutter.platform }}.com/{{ cookiecutter.org }}/{{ cookiecutter.project_name }}",
 
     "__year": "{% now 'utc', '%Y' %}",
     "license": ["GPLv3", "MIT", "Apache", null],
     "versioning_scheme": ["semver", "PEP440"],
-    
+
     "project_short_description": "Sample cookiecutter template for infection monkey.",
     "python_major_version": 3,
     "python_minor_version": 11,
@@ -28,8 +26,6 @@
 
     "hook_shellcheck": ["y","n"],
 
-    "codecov": ["y","n"],
-    
     "exclude_these_file_in_flake8": "vulture_allowlist.py",
 
     "_black_version": "24.3.0",
