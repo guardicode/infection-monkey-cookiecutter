@@ -3,7 +3,7 @@
     "__plugin_name": "{{ cookiecutter.plugin_name | lower | replace(' ', '') | replace('-', '') | replace('_', '') }}",
     "plugin_type": ["Exploiter", "Credentials_Collector", "Payload"],
     "plugin_options": true,
-    "__prompt__": {
+    "__prompts__": {
         "plugin_type": "Select the type of plugin",
         "plugin_options": "Will your plugin require configuration in order to run?"
     }
