@@ -36,18 +36,14 @@
     "_vulture_version": "2.9.1",
 
     "__prompts__": {
+        "exclude_these_file_in_flake8": "Specify files to exclude from linting",
         "license": {
             "__prompt__": "Choose a license",
             "GPLv3": "GPLv3 (recommended for infection monkey projects)"
         },
-        "versioning_scheme": {
-            "__prompt__": "Choose a versioning_scheme"
-        },
-        "hook_shellcheck":{
-            "__prompt__": "Add shellcheck to .pre-commit-config"
-        },
-        "support_type_checking": {
-            "__prompt__": "Will this package support type checking? (Adds py.typed)"
-        }
+        "project_name": "Project repo name",
+        "versioning_scheme": "Choose a versioning scheme",
+        "hook_shellcheck": "Add shellcheck to .pre-commit-config?",
+        "support_type_checking": "Will this package support type checking? (Adds py.typed)"
     }
 }
