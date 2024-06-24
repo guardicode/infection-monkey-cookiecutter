@@ -5,31 +5,27 @@
 
     "full_name": "Your Name",
     "email": "you@gmail.com",
-    "github_repo": "infection-monkey-template",
 
     "platform": [
         "github",
         "gitlab"
     ],
-    
+
     "org": "guardicode",
-    "github_url": "guardicode",
     "url": "https://{{ cookiecutter.platform }}.com/{{ cookiecutter.org }}/{{ cookiecutter.project_name }}",
 
     "__year": "{% now 'utc', '%Y' %}",
     "license": ["GPLv3", "MIT", "Apache", null],
     "versioning_scheme": ["semver", "PEP440"],
-    
+
     "project_short_description": "Sample cookiecutter template for infection monkey.",
     "python_major_version": 3,
     "python_minor_version": 11,
 
-    "support_type_checking": ["y","n"],
+    "support_type_checking": true,
 
-    "hook_shellcheck": ["y","n"],
+    "hook_shellcheck": true,
 
-    "codecov": ["y","n"],
-    
     "exclude_these_file_in_flake8": "vulture_allowlist.py",
 
     "_black_version": "24.3.0",
@@ -40,18 +36,14 @@
     "_vulture_version": "2.9.1",
 
     "__prompts__": {
+        "exclude_these_file_in_flake8": "Specify files to exclude from linting",
         "license": {
             "__prompt__": "Choose a license",
             "GPLv3": "GPLv3 (recommended for infection monkey projects)"
         },
-        "versioning_scheme": {
-            "__prompt__": "Choose a versioning_scheme"
-        },
-        "hook_shellcheck":{
-            "__prompt__": "Add shellcheck to .pre-commit-config"
-        },
-        "support_type_checking": {
-            "__prompt__": "Will this package support type checking? (Adds py.typed)"
-        }
+        "project_name": "Project repo name",
+        "versioning_scheme": "Choose a versioning scheme",
+        "hook_shellcheck": "Add shellcheck to .pre-commit-config?",
+        "support_type_checking": "Will this package support type checking? (Adds py.typed)"
     }
 }

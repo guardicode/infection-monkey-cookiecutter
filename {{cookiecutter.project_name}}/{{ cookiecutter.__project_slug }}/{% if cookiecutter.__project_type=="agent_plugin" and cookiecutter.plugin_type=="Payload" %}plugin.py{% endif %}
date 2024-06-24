@@ -1,5 +1,5 @@
 import logging
-{% if cookiecutter.plugin_options=="y"  %}from pprint import pformat{% endif %}
+{% if cookiecutter.plugin_options %}from pprint import pformat{% endif %}
 from typing import Any, Dict
 
 from agentpluginapi import (
@@ -8,7 +8,7 @@ from agentpluginapi import (
     LocalMachineInfo,
 )
 from monkeytypes import AgentID, Event, SocketAddress
-{% if cookiecutter.plugin_options=="y"  %}
+{% if cookiecutter.plugin_options %}
 from .{{ cookiecutter.__plugin_name }}_options import {{ cookiecutter.plugin_name }}Options
 
 logger = logging.getLogger(__name__){% endif %}
@@ -37,7 +37,7 @@ class Plugin:
         options: Dict[str, Any],
         interrupt: Event,
         **kwargs,
-    ) -> PayloadResult:{% if cookiecutter.plugin_options=="y"  %}
+    ) -> PayloadResult:{% if cookiecutter.plugin_options %}
         try:
             logger.debug("Parsing options: {pformat(options)}")
             {{ cookiecutter.__plugin_name }}_options = {{ cookiecutter.plugin_name }}Options(**options)
