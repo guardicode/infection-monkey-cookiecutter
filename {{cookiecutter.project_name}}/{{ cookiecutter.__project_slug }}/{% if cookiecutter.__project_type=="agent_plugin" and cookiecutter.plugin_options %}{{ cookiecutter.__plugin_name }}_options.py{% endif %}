@@ -1,6 +1,7 @@
 from monkeytypes import InfectionMonkeyBaseModel
 
 
-class {{ cookiecutter.plugin_name }}Options(InfectionMonkeyBaseModel):
+class {{ cookiecutter.__plugin_options_class }}(InfectionMonkeyBaseModel):
     # Define your plugin's options here.
     # <Link to documentation>
+    ...
