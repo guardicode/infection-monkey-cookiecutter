@@ -71,6 +71,10 @@ black = "{{ cookiecutter._black_version }}"
 dlint = "{{ cookiecutter._dlint_version }}"
 flake8 = "{{ cookiecutter._flake8_version }}"
 isort = "{{ cookiecutter._isort_version }}"
+{%- if cookiecutter.__project_type=="agent_plugin" %}
+monkey-agentpluginapi = "{{ cookiecutter._monkeyagentpluginapi_version }}"
+monkey-types = "{{ cookiecutter._monkeytypes_version }}"
+{%- endif %}
 mypy = "{{ cookiecutter._mypy_version }}"
 pudb = "^2022.1.2"
 pynvim = "^0.4.3"
