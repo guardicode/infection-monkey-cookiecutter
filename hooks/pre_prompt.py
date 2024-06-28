@@ -42,12 +42,11 @@ def extend_default_cookiecutter(
         if cookiecutter_plugin_config_path.exists():
             plugin_config = json.loads(cookiecutter_plugin_config_path.read_text())
 
-            # The __prompt__ key needs to get merged
-            cookiecutter_json["__prompts__"].update(plugin_config["__prompts__"])
-
             # We change the order of the prompts to ask for the plugin configuration first
             # after we choose the project type
-            return {**plugin_config, **cookiecutter_json}
+            bla = {**plugin_config, **cookiecutter_json}
+            print(bla)
+            return bla
 
 
 def prompt_for_generic_or_plugin() -> str:

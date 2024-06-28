@@ -6,10 +6,5 @@
     "plugin_options": true,
 
     "_monkeyagentpluginapi_version": "0.11.0",
-    "_monkeytypes_version": "0.7.0",
-
-    "__prompts__": {
-        "plugin_type": "Select the type of plugin",
-        "plugin_options": "Will your plugin require configuration in order to run?"
-    }
+    "_monkeytypes_version": "0.7.0"
 }
