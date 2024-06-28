@@ -1,0 +1,1 @@
+{% include "vulture_allowlist.py" %}

@@ -67,6 +67,9 @@ include = ["CHANGELOG.md", "README.md"]
 python = "^{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
 
 [tool.poetry.dev-dependencies]
+{%- if cookiecutter.__project_type=="agent_plugin" %}
+agent-plugin-builder = "{{ cookiecutter._agent_plugin_builder_version }}"
+{%- endif %}
 black = "{{ cookiecutter._black_version }}"
 dlint = "{{ cookiecutter._dlint_version }}"
 flake8 = "{{ cookiecutter._flake8_version }}"
