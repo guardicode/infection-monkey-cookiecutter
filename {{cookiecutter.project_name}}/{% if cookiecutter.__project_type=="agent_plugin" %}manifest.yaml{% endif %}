@@ -1,6 +1,6 @@
 # For more check our plugin documentation:
 # <link to our manifest documentation>
-name: {{ cookiecutter.plugin_name }}
+Aname: {{ cookiecutter.plugin_name }}
 plugin_type: {{ cookiecutter.plugin_type }}
 supported_operating_systems:
   - # List of supported operating systems (linux/windows)
