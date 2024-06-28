@@ -1,1 +1,1 @@
-{% include "vulture_allowlist.py" %}
+{% include "vulture_allowlist.py.template" %}

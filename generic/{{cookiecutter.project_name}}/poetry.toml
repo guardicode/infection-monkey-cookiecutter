@@ -1,1 +1,1 @@
-{% include "poetry.toml" %}
+{% include "poetry.toml.template" %}

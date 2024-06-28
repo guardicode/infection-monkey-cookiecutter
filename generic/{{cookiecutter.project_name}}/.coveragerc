@@ -1,1 +1,1 @@
-{% include ".coveragerc" %}
+{% include ".coveragerc.template" %}

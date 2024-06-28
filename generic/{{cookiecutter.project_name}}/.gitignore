@@ -1,1 +1,1 @@
-{% include ".gitignore" %}
+{% include ".gitignore.template" %}
