@@ -1,7 +1,13 @@
 {
-    "__project_type": "generic",
-    "project_name": "infection-monkey-template",
+    "project_name": "infection-monkey-agent-plugin",
+    "__project_type": "agent_plugin",
     "__project_slug": "{{ cookiecutter.project_name | lower | replace('-', '_') | replace('.', '_') }}",
+
+    "plugin_name": "Name of the plugin",
+    "__plugin_name": "{{ cookiecutter.plugin_name | lower | replace(' ', '') | replace('-', '') | replace('_', '') }}",
+    "__plugin_options_class": "{{ cookiecutter.plugin_name | replace(' ', '') | replace('-', '') | replace('_', '') }}Options",
+    "plugin_type": ["Exploiter", "Credentials_Collector", "Payload"],
+    "plugin_options": true,
 
     "full_name": "Your Name",
     "email": "you@gmail.com",
@@ -35,6 +41,10 @@
     "_mypy_version": "1.5.1",
     "_vulture_version": "2.9.1",
 
+    "_agent_plugin_builder_version": "0.1.0",
+    "_monkeyagentpluginapi_version": "0.11.0",
+    "_monkeytypes_version": "0.7.0",
+
     "__prompts__": {
         "exclude_these_file_in_flake8": "Specify files to exclude from linting",
         "license": {
@@ -48,15 +58,5 @@
 
         "plugin_type": "Select the type of plugin",
         "plugin_options": "Will your plugin require configuration in order to run?"
-    },
-
-    "plugin_name": "Name of the plugin",
-    "__plugin_name": "{{ cookiecutter.plugin_name | lower | replace(' ', '') | replace('-', '') | replace('_', '') }}",
-    "__plugin_options_class": "{{ cookiecutter.plugin_name | replace(' ', '') | replace('-', '') | replace('_', '') }}Options",
-    "plugin_type": ["Exploiter", "Credentials_Collector", "Payload"],
-    "plugin_options": true,
-
-    "_agent_plugin_builder_version": "0.1.0",
-    "_monkeyagentpluginapi_version": "0.11.0",
-    "_monkeytypes_version": "0.7.0"
+    }
 }
