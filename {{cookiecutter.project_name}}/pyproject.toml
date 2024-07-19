@@ -43,7 +43,9 @@ paths = ["{{ cookiecutter.__project_slug }}", "vulture_allowlist.py"]
 
 [tool.poetry]
 name = "{{ cookiecutter.project_name }}"
+{%- if cookiecutter.__project_type!="agent_plugin" %}
 version = "v0.1.0"
+{%- endif %}
 description = "{{ cookiecutter.project_short_description }}"
 authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
 {%- if cookiecutter.license is not none %}
@@ -62,6 +64,9 @@ classifiers=[
 repository = "{{ cookiecutter.url }}"
 readme = "README.md"
 include = ["CHANGELOG.md", "README.md"]
+{%- if cookiecutter.__project_type=="agent_plugin" %}
+package-mode = false
+{%- endif %}
 
 [tool.poetry.dependencies]
 python = "^{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
