@@ -1,7 +1,32 @@
 [project]
-name = "{{ cookiecutter.project_name }}"
+authors = [{name = "{{ cookiecutter.full_name }}", email="{{ cookiecutter.email }}"}]
+classifiers=[
+{%- if cookiecutter.license == "GPLv3" %}
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+{%- elif cookiecutter.license == "Apache" %}
+    "License :: OSI Approved :: Apache Software License",
+{%- elif cookiecutter.license == "MIT" %}
+    "License :: OSI Approved :: MIT License",
+{%- endif %}
+    "Programming Language :: Python :: {{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
+]
+dependencies = []
+description = "{{ cookiecutter.project_short_description }}"
+dynamic = ["readme"]
+{%- if cookiecutter.license is not none %}
 license = "{{ cookiecutter.license }}"
+{%- endif %}
+name = "{{ cookiecutter.project_name }}"
 requires-python = "^{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
+version = "v0.1.0"
+
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"]}
+
+[project.urls]
+Repository = "{{ cookiecutter.url }}"
+
 
 
 [tool.black]
@@ -42,29 +67,7 @@ exclude=[]
 paths = ["{{ cookiecutter.__project_slug }}", "vulture_allowlist.py"]
 
 [tool.poetry]
-name = "{{ cookiecutter.project_name }}"
-version = "v0.1.0"
-description = "{{ cookiecutter.project_short_description }}"
-authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
-{%- if cookiecutter.license is not none %}
-license = "{{ cookiecutter.license }}"
-{%- endif %}
-classifiers=[
-{%- if cookiecutter.license == "GPLv3" %}
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-{%- elif cookiecutter.license == "Apache" %}
-    "License :: OSI Approved :: Apache Software License",
-{%- elif cookiecutter.license == "MIT" %}
-    "License :: OSI Approved :: MIT License",
-{%- endif %}
-    "Programming Language :: Python :: {{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
-]
-repository = "{{ cookiecutter.url }}"
-readme = "README.md"
 include = ["CHANGELOG.md", "README.md"]
-
-[tool.poetry.dependencies]
-python = "^{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
 
 [tool.poetry.group.dev.dependencies]
 {%- if cookiecutter.__project_type=="agent_plugin" %}
@@ -87,5 +90,5 @@ pytest-xdist = "^3.3.1"
 vulture = "{{ cookiecutter._vulture_version }}"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
