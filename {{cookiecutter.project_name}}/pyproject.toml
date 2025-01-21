@@ -20,14 +20,11 @@ name = "{{ cookiecutter.project_name }}"
 requires-python = "^{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
 version = "v0.1.0"
 
-
 [tool.setuptools.dynamic]
 readme = {file = ["README.md"]}
 
 [project.urls]
 Repository = "{{ cookiecutter.url }}"
-
-
 
 [tool.black]
 line-length = 100
