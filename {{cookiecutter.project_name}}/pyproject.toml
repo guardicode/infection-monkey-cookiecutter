@@ -31,14 +31,14 @@ line-length = 100
 
 [tool.cruft]
 skip = [
-    "{{ cookiecutter.project_name }}/__init__.py",
+    "{{ cookiecutter.__project_slug }}/__init__.py",
     "README.md",
     "CHANGELOG.md",
     "vulture_allowlist.py"
 ]
 
 [tool.isort]
-known_first_party = "{{ cookiecutter.project_name }}"
+known_first_party = "{{ cookiecutter.__project_slug }}"
 line_length = 100
 skip_glob="**/__init__.py"
 ### for compatibility with black
