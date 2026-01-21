@@ -44,7 +44,7 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: trailing-whitespace
-{%- if cookiecutter.hook_shellcheck == "y" %}
+{%- if cookiecutter.hook_shellcheck %}
   - repo: https://github.com/koalaman/shellcheck-precommit
     rev: v0.9.0
     hooks:
