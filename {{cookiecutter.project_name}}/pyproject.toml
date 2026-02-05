@@ -79,7 +79,7 @@ monkey-agentpluginapi = "{{ cookiecutter._monkeyagentpluginapi_version }}"
 monkey-types = "{{ cookiecutter._monkeytypes_version }}"
 {%- endif %}
 mypy = "{{ cookiecutter._mypy_version }}"
-pudb = "^2022.1.2"
+pudb = ">=2025.1.5"
 pynvim = "^0.4.3"
 pytest = "^7.1.0"
 pytest-cov = "^3.0.0"
