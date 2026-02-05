@@ -17,7 +17,7 @@ dynamic = ["readme"]
 license = "{{ cookiecutter.license }}"
 {%- endif %}
 name = "{{ cookiecutter.project_name }}"
-requires-python = ">={{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
+requires-python = ">={{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}, <4.0"
 version = "v0.1.0"
 
 [tool.setuptools.dynamic]
