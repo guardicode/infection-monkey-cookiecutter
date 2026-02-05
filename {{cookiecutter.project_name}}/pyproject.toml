@@ -17,7 +17,7 @@ dynamic = ["readme"]
 license = "{{ cookiecutter.license }}"
 {%- endif %}
 name = "{{ cookiecutter.project_name }}"
-requires-python = "^{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
+requires-python = ">={{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}"
 version = "v0.1.0"
 
 [tool.setuptools.dynamic]
@@ -79,11 +79,11 @@ monkey-agentpluginapi = "{{ cookiecutter._monkeyagentpluginapi_version }}"
 monkey-types = "{{ cookiecutter._monkeytypes_version }}"
 {%- endif %}
 mypy = "{{ cookiecutter._mypy_version }}"
-pudb = "^2022.1.2"
-pynvim = "^0.4.3"
-pytest = "^7.1.0"
-pytest-cov = "^3.0.0"
-pytest-xdist = "^3.3.1"
+pudb = ">=2025.1.5"
+pynvim = ">=0.4.3, <1.0.0"
+pytest = ">=7.1.0, <8.0.0"
+pytest-cov = ">=3.0.0 <4.0.0"
+pytest-xdist = ">=3.3.1"
 vulture = "{{ cookiecutter._vulture_version }}"
 
 [build-system]
