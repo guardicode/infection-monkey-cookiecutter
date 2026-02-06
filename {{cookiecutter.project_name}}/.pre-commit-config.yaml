@@ -50,7 +50,12 @@ repos:
     hooks:
     -   id: shellcheck
 {%- endif %}
-  - repo: https://github.com/jendrikseipp/vulture
-    rev: v{{ cookiecutter._vulture_version }}
+  - repo: local
     hooks:
       - id: vulture
+        name: vulture
+        entry: python scripts/run_vulture.py
+        language: python
+        pass_filenames: true
+        require_serial: true
+        additional_dependencies: [vulture=={{ cookiecutter._vulture_version }}]
