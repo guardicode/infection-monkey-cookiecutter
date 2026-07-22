@@ -54,3 +54,7 @@ repos:
     rev: v{{ cookiecutter._vulture_version }}
     hooks:
       - id: vulture
+  - repo: https://github.com/mssalvatore/changelog-formatter-commit-hook
+    rev: v1.0.0
+    hooks:
+      - id: changelog-formatter
