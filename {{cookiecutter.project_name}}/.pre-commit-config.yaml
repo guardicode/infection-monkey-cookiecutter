@@ -1,3 +1,7 @@
+{% if cookiecutter.hook_gitlint -%}
+# prepare-commit-msg runs merge-issue-number; commit-msg runs gitlint
+default_install_hook_types: [pre-commit, prepare-commit-msg, commit-msg]
+{% endif -%}
 default_stages: [pre-commit]
 default_language_version:
   python: python{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}
@@ -27,6 +31,16 @@ repos:
     rev: v1.0.0
     hooks:
       - id: merge-issue-number
+{%- if cookiecutter.hook_gitlint %}
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.19.1
+    hooks:
+      - id: gitlint
+        stages: [commit-msg]
+        additional_dependencies: [pydocstyle==6.3.0]
+        args: [--staged, --msg-filename]
+
+{%- endif %}
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v{{ cookiecutter._mypy_version }}
     hooks:

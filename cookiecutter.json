@@ -26,6 +26,10 @@
 
     "hook_shellcheck": true,
 
+    "hook_gitlint": true,
+    "require_jira_prefix": false,
+    "require_pr_number_on_merge": false,
+
     "exclude_these_file_in_flake8": "vulture_allowlist.py",
 
     "_black_version": "25.12.0",
@@ -44,6 +48,9 @@
         "project_name": "Project repo name",
         "versioning_scheme": "Choose a versioning scheme",
         "hook_shellcheck": "Add shellcheck to .pre-commit-config?",
+        "hook_gitlint": "Enforce commit message conventions via gitlint?",
+        "require_jira_prefix": "Require a Jira key (e.g. 'OCPSG-123: ') in commit titles? (needs hook_gitlint)",
+        "require_pr_number_on_merge": "Require a PR number ('#123') in merges into master/main/dev/develop? (needs hook_gitlint)",
         "support_type_checking": "Will this package support type checking? (Adds py.typed)"
     }
 }
