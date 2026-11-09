@@ -26,6 +26,8 @@
 
     "hook_shellcheck": true,
 
+    "sphinx_documentation": false,
+
     "exclude_these_file_in_flake8": "vulture_allowlist.py",
 
     "_black_version": "25.12.0",
@@ -44,6 +46,7 @@
         "project_name": "Project repo name",
         "versioning_scheme": "Choose a versioning scheme",
         "hook_shellcheck": "Add shellcheck to .pre-commit-config?",
+        "sphinx_documentation": "Will this package be documented with Sphinx?",
         "support_type_checking": "Will this package support type checking? (Adds py.typed)"
     }
 }
