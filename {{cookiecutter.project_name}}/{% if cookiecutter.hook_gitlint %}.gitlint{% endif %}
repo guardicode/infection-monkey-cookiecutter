@@ -5,7 +5,7 @@ ignore=body-min-length,body-is-missing
 # merge-requires-pr-number checks merges; the other rules skip them (see ignore-by-title:merges)
 ignore-merge-commits=false
 {%- endif %}
-extra-path=commit_hooks
+extra-path=.commit_hooks
 regex-style-search=true
 
 [title-max-length]

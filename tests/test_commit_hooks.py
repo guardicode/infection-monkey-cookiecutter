@@ -225,7 +225,7 @@ def test_require_pr_number_on_merge__ordinary_commit_needs_no_pr_number(repo: Pa
 
 
 def test_require_pr_number_on_merge__off_by_default(project: Path) -> None:
-    assert not (project / "commit_hooks" / "merge_pr_number_rule.py").exists()
+    assert not (project / ".commit_hooks" / "merge_pr_number_rule.py").exists()
     assert "merge-requires-pr-number" not in (project / ".gitlint").read_text()
 
 
@@ -239,5 +239,5 @@ def test_hook_gitlint__on_by_default(tmp_path: Path) -> None:
 def test_hook_gitlint__off(tmp_path: Path) -> None:
     path = render(tmp_path, hook_gitlint=False)
     assert not (path / ".gitlint").exists()
-    assert not any((path / "commit_hooks").iterdir())
+    assert not any((path / ".commit_hooks").iterdir())
     assert "gitlint" not in (path / ".pre-commit-config.yaml").read_text()
