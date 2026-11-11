@@ -35,6 +35,7 @@
     "_black_version": "25.12.0",
     "_dlint_version": "0.15.0",
     "_flake8_version": "7.3.0",
+    "_gitlint_hook_version": "v0.1.0",
     "_isort_version": "7.0.0",
     "_mypy_version": "1.19.0",
     "_vulture_version": "2.13",
@@ -48,7 +49,7 @@
         "project_name": "Project repo name",
         "versioning_scheme": "Choose a versioning scheme",
         "hook_shellcheck": "Add shellcheck to .pre-commit-config?",
-        "hook_gitlint": "Enforce commit message conventions via gitlint?",
+        "hook_gitlint": "Enforce commit message conventions via gitlint-commit-hook?",
         "require_jira_prefix": "Require a Jira key (e.g. 'OCPSG-123: ') in commit titles? (needs hook_gitlint)",
         "require_pr_number_on_merge": "Require a PR number ('#123') in merges into master/main/dev/develop? (needs hook_gitlint)",
         "support_type_checking": "Will this package support type checking? (Adds py.typed)"

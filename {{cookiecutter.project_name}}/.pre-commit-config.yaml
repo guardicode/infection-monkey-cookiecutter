@@ -32,14 +32,13 @@ repos:
     hooks:
       - id: merge-issue-number
 {%- if cookiecutter.hook_gitlint %}
-  - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.19.1
+  - repo: https://github.com/adamdelman/gitlint-commit-hook
+    rev: {{ cookiecutter._gitlint_hook_version }}
     hooks:
       - id: gitlint
-        stages: [commit-msg]
-        additional_dependencies: [pydocstyle==6.3.0]
-        args: [--staged, --msg-filename]
-
+{%- if cookiecutter.require_jira_prefix or cookiecutter.require_pr_number_on_merge %}
+        args: [{% if cookiecutter.require_jira_prefix %}--require-jira-prefix{% endif %}{% if cookiecutter.require_jira_prefix and cookiecutter.require_pr_number_on_merge %}, {% endif %}{% if cookiecutter.require_pr_number_on_merge %}--require-pr-number-on-merge{% endif %}]
+{%- endif %}
 {%- endif %}
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v{{ cookiecutter._mypy_version }}

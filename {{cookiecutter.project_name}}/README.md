@@ -23,7 +23,7 @@ Commit messages follow [How to Write a Git Commit Message](https://cbea.ms/git-c
 a linter can check:
 
 - Separate the subject from the body with a blank line.
-- Keep the subject at most 50 characters long.
+- Keep the subject at most 72 characters long.
 - Capitalize the subject.
 - Don't end the subject with a period.
 - Use the imperative mood in the subject (`Add`, not `Added` or `Adds`).
@@ -41,11 +41,12 @@ The subject also starts with a Jira key, e.g. `OCPSG-123: Add map writer`.
 {%- endif %}
 {%- if cookiecutter.require_pr_number_on_merge %}
 
-Merging a branch into `master`, `main` or `dev` needs a PR number (`#123`) in the merge message.
-GitHub's merge button adds it for you. Merges into other branches and `git pull` merges don't need
-one. A fast-forward makes no commit, so it can't be checked; use `git merge --no-ff`.
+Merging a branch into `master`, `main`, `dev` or `develop` needs a PR number (`#123`) in the merge
+message. GitHub's merge button adds it for you. Merges into other branches and `git pull` merges
+don't need one. A fast-forward makes no commit, so it can't be checked; use `git merge --no-ff`.
 {%- endif %}
 
 Fixups, squashes, amends and `git revert` commits are not checked.
-{%- if not cookiecutter.require_pr_number_on_merge %} Neither are merges.{% endif %}
+{%- if not cookiecutter.require_pr_number_on_merge %} Neither are merges.{% endif %} The rules come
+from [gitlint-commit-hook](https://github.com/adamdelman/gitlint-commit-hook).
 {%- endif %}
