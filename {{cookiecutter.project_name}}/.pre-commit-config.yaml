@@ -32,7 +32,7 @@ repos:
     hooks:
       - id: merge-issue-number
 {%- if cookiecutter.hook_gitlint %}
-  - repo: https://github.com/adamdelman/gitlint-commit-hook
+  - repo: https://github.com/guardicode/gitlint-commit-hook
     rev: {{ cookiecutter._gitlint_hook_version }}
     hooks:
       - id: gitlint
