@@ -5,7 +5,7 @@ import yaml
 from cookiecutter.main import cookiecutter
 
 TEMPLATE_DIR = Path(__file__).parent.parent
-HOOK_REPO = "https://github.com/adamdelman/gitlint-commit-hook"
+HOOK_REPO = "https://github.com/guardicode/gitlint-commit-hook"
 
 
 def render(output_dir: Path, **context: object) -> Path:
