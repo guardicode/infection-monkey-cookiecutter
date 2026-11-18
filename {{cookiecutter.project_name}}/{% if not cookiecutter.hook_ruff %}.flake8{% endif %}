@@ -1,7 +1,7 @@
 [flake8]
 ## Warn about linter issues.
 
-exclude = "{{ cookiecutter.exclude_these_file_in_flake8 }}"
+exclude = {{ cookiecutter.exclude_these_file_in_flake8 }}
 show-source = True
 max-complexity = 10
 max-line-length = 100

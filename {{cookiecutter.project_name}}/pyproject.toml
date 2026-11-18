@@ -25,9 +25,11 @@ readme = {file = ["README.md"]}
 
 [project.urls]
 Repository = "{{ cookiecutter.url }}"
+{%- if not cookiecutter.hook_ruff %}
 
 [tool.black]
 line-length = 100
+{%- endif %}
 
 [tool.cruft]
 skip = [
@@ -36,6 +38,48 @@ skip = [
     "CHANGELOG.md",
     "vulture_allowlist.py"
 ]
+{%- if cookiecutter.hook_ruff %}
+
+[tool.ruff]
+line-length = 100
+# pre-commit passes files by name; without this, ruff ignores the exclude list for them
+force-exclude = true
+extend-exclude = [
+{%- for excluded in cookiecutter.exclude_these_file_in_flake8.split(",") if excluded.strip() %}
+    "{{ excluded.strip() }}",
+{%- endfor %}
+]
+
+[tool.ruff.lint]
+extend-select = [
+    "E",    # pycodestyle errors, incl. E501 line length (flake8 parity)
+    "W",    # pycodestyle warnings (flake8 parity)
+    "C90",  # mccabe complexity (flake8 parity)
+    "I",    # Import sorting (isort replacement)
+    "S",    # Security checks (Bandit - primary dlint replacement)
+    "B",    # Bugbear (common bugs and design issues)
+    "BLE",  # Blind except checks
+    "RUF",  # Astral's native rules
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+    "F401",  # Re-exports
+    "I001",  # Import order may matter; isort skipped these files too
+]
+"tests/**" = [
+    "S101",  # pytest relies on assert
+    "S105",  # Hardcoded passwords are fine in test fixtures
+    "S106",
+    "S108",  # Temp file paths are fine in tests
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["{{ cookiecutter.__project_slug }}"]
+{%- else %}
 
 [tool.isort]
 known_first_party = "{{ cookiecutter.__project_slug }}"
@@ -47,6 +91,7 @@ include_trailing_comma = true
 force_grid_wrap = 0
 use_parentheses = true
 ensure_newline_before_comments = true
+{%- endif %}
 
 [tool.mypy]
 check_untyped_defs = true
@@ -70,10 +115,14 @@ include = ["CHANGELOG.md", "README.md"]
 {%- if cookiecutter.__project_type=="agent_plugin" %}
 agent-plugin-builder = "{{ cookiecutter._agentpluginbuilder_version }}"
 {%- endif %}
+{%- if cookiecutter.hook_ruff %}
+ruff = "{{ cookiecutter._ruff_version }}"
+{%- else %}
 black = "{{ cookiecutter._black_version }}"
 dlint = "{{ cookiecutter._dlint_version }}"
 flake8 = "{{ cookiecutter._flake8_version }}"
 isort = "{{ cookiecutter._isort_version }}"
+{%- endif %}
 {%- if cookiecutter.__project_type=="agent_plugin" %}
 monkey-agentpluginapi = "{{ cookiecutter._monkeyagentpluginapi_version }}"
 monkey-types = "{{ cookiecutter._monkeytypes_version }}"
