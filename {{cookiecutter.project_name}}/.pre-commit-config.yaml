@@ -7,6 +7,14 @@ default_language_version:
   python: python{{ cookiecutter.python_major_version }}.{{ cookiecutter.python_minor_version }}
 
 repos:
+{%- if cookiecutter.hook_ruff %}
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v{{ cookiecutter._ruff_version }}
+    hooks:
+      - id: ruff-check
+        args: [ --fix ]
+      - id: ruff-format
+{%- else %}
   - repo: https://github.com/psf/black
     rev: {{ cookiecutter._black_version }}
     hooks:
@@ -27,6 +35,7 @@ repos:
       - id: isort
         name: isort (pyi)
         types: [pyi]
+{%- endif %}
   - repo: https://github.com/mssalvatore/merge-issue-number-hook
     rev: v1.0.0
     hooks:

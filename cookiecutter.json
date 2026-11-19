@@ -24,6 +24,8 @@
 
     "support_type_checking": true,
 
+    "hook_ruff": false,
+
     "hook_shellcheck": true,
 
     "hook_gitlint": true,
@@ -32,6 +34,7 @@
 
     "exclude_these_file_in_flake8": "vulture_allowlist.py",
 
+    "_ruff_version": "0.17.5",
     "_black_version": "25.12.0",
     "_dlint_version": "0.15.0",
     "_flake8_version": "7.3.0",
@@ -41,13 +44,14 @@
     "_vulture_version": "2.13",
 
     "__prompts__": {
-        "exclude_these_file_in_flake8": "Specify files to exclude from linting",
+        "exclude_these_file_in_flake8": "Files to exclude from linting (comma-separated)",
         "license": {
             "__prompt__": "Choose a license",
             "GPLv3": "GPLv3 (recommended for infection monkey projects)"
         },
         "project_name": "Project repo name",
         "versioning_scheme": "Choose a versioning scheme",
+        "hook_ruff": "Use ruff instead of black, flake8, and isort?",
         "hook_shellcheck": "Add shellcheck to .pre-commit-config?",
         "hook_gitlint": "Enforce commit message conventions via gitlint-commit-hook?",
         "require_jira_prefix": "Require a Jira key (e.g. 'OCPSG-123: ') in commit titles? (needs hook_gitlint)",
